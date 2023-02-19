@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.login-container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.lg-container {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: auto;
+    justify-content: center;
+}
+
+.lg-container form {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lg-container form input {
+    background: transparent;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    margin: 10px 0px;
+    width: 100%;
+}
+
+.lg-container button {
+    width: 100%;
+    margin: 10px 0px;
+    font-size: 15px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    color: white;
+}
+
+.lg-container button:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

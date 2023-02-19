@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
+import './Styles/maps.css'
 
 
 export default function Maps() {
@@ -115,11 +116,13 @@ export default function Maps() {
                                         anchor="left"
                                     >
                                         <div className="addNewPin">
-                                            <form onSubmit={handleFormSubmit}>
+                                            <form onSubmit={handleFormSubmit} >
                                                 <label htmlFor="">Title</label>
                                                 <input type="text" className="title" placeholder='Enter Place Name' onChange={(e) => setTitle(e.target.value)} />
+
                                                 <label htmlFor="">Description</label>
-                                                <input type="text" className="desc" placeholder='Write a review for place' onChange={(e) => setDesc(e.target.value)} />
+                                                <textarea type="text" className="desc" placeholder='Write a review for place' onChange={(e) => setDesc(e.target.value)} />
+
                                                 <label htmlFor="">Rating</label>
                                                 <select name="rating" id="" className='rating' onChange={(e) => setRating(e.target.value)}>
                                                     <option value="1">1</option>

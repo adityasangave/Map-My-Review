@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+}
+
+.card label {
+    font-size: 14px;
+    font-weight: 300;
+    border-bottom: 1px solid black;
+    color: black;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+.stars {
+    color: goldenrod;
+}
+
+.information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* addnewpin form styling */
+
+.addNewPin {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: start; */
+}
+
+.addNewPin form {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: start; */
+    justify-content: space-between;
+}
+
+.addNewPin label {
+    font-size: 14px;
+    color: black;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
+.addNewPin input textarea {
+    font-size: 12px;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.addNewPin select {
+    width: 100%;
+}
+
+.addNewPin button {
+    width: 100%;
+    text-align: center;
+}

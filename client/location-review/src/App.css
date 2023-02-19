@@ -1,35 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-.card {
-    width: 250px;
-    height: 250px;
+/* footer styling */
+
+.footer {
+    position: absolute;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    position: relative;
-}
-
-.card label {
-    font-size: 14px;
-    font-weight: 300;
-    border-bottom: 1px solid black;
-    color: black;
-}
-
-.icon {
-    cursor: pointer;
-}
-
-.stars {
-    color: goldenrod;
-}
-
-.information {
-    display: flex;
+    padding: 10px;
     flex-direction: row;
-    justify-content: space-between;
+    height: auto;
+    width: 100vw;
+    z-index: 100;
+    bottom: 0;
+    justify-content: center;
+}
+
+.footer button {
+    width: 200px;
+    margin: 0px 20px;
+    font-size: 15px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    color: white;
+}
+
+.footer button:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
