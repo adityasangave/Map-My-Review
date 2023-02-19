@@ -7,7 +7,7 @@ import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import './Styles/maps.css'
 
 
-export default function Maps() {
+export default function Maps(props) {
     const [pins, setPins] = useState([]);
     const [viewPort, setViewPort] = useState({
         longitude: 10.5,
@@ -36,8 +36,33 @@ export default function Maps() {
     }
 
     // When user submit add new pin form
-    const handleFormSubmit = () => {
+    const handleFormSubmit = async (e) => {
+        e.preventDefault();
 
+        const newPin = {
+            username: props.currentUser,
+            title: title,
+            rating: rating,
+            desc: desc,
+            lati: placeInfo.latitude,
+            long: placeInfo.longitude
+        }
+
+        try {
+            if (props.currentUser) {
+                const res = await axios.post("/pins/create-pin", newPin)
+                setPins([...pins, res.data])
+                setPlaceInfo(null)
+                setTitle(null)
+                setDesc(null)
+                setRating(null)
+            }
+            else {
+                //notify
+            }
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     useEffect(() => {

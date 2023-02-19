@@ -10,7 +10,7 @@ function App() {
   const [showRegister, setShowRegister] = useState(false)
   return (
     <div>
-      <Maps />
+      <Maps currentUser={currentUser} setCurrentUser={setCurrentUser} />
       <div className="footer">
         {
           currentUser ? (<button>Log Out</button>) :
