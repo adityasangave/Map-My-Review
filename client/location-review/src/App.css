@@ -1,0 +1,35 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.card {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+}
+
+.card label {
+    font-size: 14px;
+    font-weight: 300;
+    border-bottom: 1px solid black;
+    color: black;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+.stars {
+    color: goldenrod;
+}
+
+.information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

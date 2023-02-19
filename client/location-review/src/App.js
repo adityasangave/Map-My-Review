@@ -1,10 +1,14 @@
 import './App.css';
+import Maps from './components/Maps';
+
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <Maps />
     </div>
-  );
+
+  )
 }
 
 export default App;
