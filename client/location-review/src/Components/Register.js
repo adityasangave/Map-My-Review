@@ -2,6 +2,8 @@ import React, { useRef } from 'react'
 import './Styles/register.css'
 import CancelIcon from '@mui/icons-material/Cancel';
 import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Register(props) {
 
@@ -21,6 +23,10 @@ export default function Register(props) {
         try {
             const res = await axios.post("/user/register", user)
             props.setShowRegister(false)
+            toast.success('Registeration Successfull', {
+                position: toast.POSITION.TOP_RIGHT,
+                theme: "dark",
+            });
         } catch (error) {
             console.log(error)
         }
@@ -41,6 +47,7 @@ export default function Register(props) {
                     <CancelIcon onClick={() => props.setShowRegister(false)} />
                 </form>
             </div>
+            <ToastContainer />
         </div>
     )
 }

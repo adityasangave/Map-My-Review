@@ -2,6 +2,8 @@ import React, { useRef } from 'react'
 import './Styles/login.css'
 import axios from 'axios'
 import CancelIcon from '@mui/icons-material/Cancel';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 export default function Login(props) {
@@ -20,6 +22,10 @@ export default function Login(props) {
             const res = await axios.post("/user/login", user)
             props.setCurrentUser(res.data.username)
             props.setShowLogin(false)
+            toast.success('Login Successfull', {
+                position: toast.POSITION.TOP_RIGHT,
+                theme: "dark",
+            });
         } catch (error) {
             console.log(error)
         }
@@ -34,10 +40,13 @@ export default function Login(props) {
                     <input type="text" className="username" placeholder='Username' ref={uname} />
                     <input type="password" className="password" placeholder='Password' ref={pass} />
 
-                    <button className="submit" type='submit'>Submit</button>
+                    <button className="submit" type='submit'>
+                        Submit
+                    </button>
                     <CancelIcon onClick={() => props.setShowLogin(false)} />
                 </form>
             </div>
+            <ToastContainer />
         </div>
     )
 }
