@@ -5,6 +5,8 @@ import axios from 'axios'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import './Styles/maps.css'
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 export default function Maps(props) {
@@ -57,6 +59,11 @@ export default function Maps(props) {
                 setTitle(null)
                 setDesc(null)
                 setRating(null)
+
+                toast.success('New Pin Added', {
+                    position: toast.POSITION.TOP_RIGHT,
+                    theme: "dark",
+                });
             }
             else {
                 //notify
@@ -83,8 +90,8 @@ export default function Maps(props) {
                 initialViewState={{}}
                 style={{ width: '100vw', height: '100vh' }}
                 mapStyle='mapbox://styles/adityazmb/cle8mbz3s001301qs3x3sn24b'
-                mapboxAccessToken='pk.eyJ1IjoiYWRpdHlhem1iIiwiYSI6ImNsZHVpdXUxczA2YmUzdnBhOWlkNWN0MWoifQ.Zgt3O3d_yGANXBD0VlOuVg'
-                onClick={handleRightClick}
+                mapboxAccessToken={process.env.ACCESS_TOKEN}
+                onDblClick={handleRightClick}
             >
                 <NavigationControl />
                 {
@@ -98,7 +105,7 @@ export default function Maps(props) {
                                 <LocationOnIcon
                                     className='icon'
                                     onClick={() => handleOnIconClick(p._id, p.long, p.lati)}
-                                    style={{ fontSize: viewPort.zoom * 2, color: 'blue' }}
+                                    style={{ fontSize: viewPort.zoom * 2, color: p.username === props.currentUser ? 'blue' : 'tomato' }}
                                 />
 
                             </Marker>
@@ -124,7 +131,7 @@ export default function Maps(props) {
                                             </div>
 
                                             <div className="information">
-                                                <span>Created By {p.usernmae} at {p.createdAt}</span>
+                                                <span>Created By {p.username} at {p.createdAt}</span>
                                             </div>
                                         </div>
                                     </Popup>
