@@ -90,7 +90,7 @@ export default function Maps(props) {
                 initialViewState={{}}
                 style={{ width: '100vw', height: '100vh' }}
                 mapStyle='mapbox://styles/adityazmb/cle8mbz3s001301qs3x3sn24b'
-                mapboxAccessToken={process.env.ACCESS_TOKEN}
+                mapboxAccessToken='pk.eyJ1IjoiYWRpdHlhem1iIiwiYSI6ImNsZHVpdXUxczA2YmUzdnBhOWlkNWN0MWoifQ.Zgt3O3d_yGANXBD0VlOuVg'
                 onDblClick={handleRightClick}
             >
                 <NavigationControl />
