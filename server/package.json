@@ -7,7 +7,7 @@
     "nodemon": "^2.0.20"
   },
   "scripts": {
-    "dev": "nodemon index.js",
-    "build": "npm i"
+    "dev": "node index.js",
+    "build": "npm install"
   }
 }

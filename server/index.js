@@ -4,6 +4,7 @@ const connectDB = require("./db")
 const server = express()
 server.use(express.json())
 
+port = process.env.PORT || 3500
 // connect to database
 connectDB()
 
@@ -13,6 +14,6 @@ connectDB()
 server.use('/api/user', require("./routes/user"))
 server.use('/api/pins', require("./routes/pin"))
 
-server.listen(3500, () => {
+server.listen(port, () => {
     console.log("\x1b[42m%s\x1b[0m", "Server is listening on port 3500")
 })
