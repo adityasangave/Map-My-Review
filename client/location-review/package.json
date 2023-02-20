@@ -43,5 +43,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://map-my-review-server.onrender.com/api"
+  "proxy": "https://map-my-review-backend.onrender.com/api"
 }
