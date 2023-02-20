@@ -53,7 +53,7 @@ export default function Maps(props) {
 
         try {
             if (props.currentUser) {
-                const res = await axios.post("/pins/create-pin", newPin)
+                const res = await axios.post("https://map-my-review-backend.onrender.com/api/pins/create-pin", newPin)
                 setPins([...pins, res.data])
                 setPlaceInfo(null)
                 setTitle(null)
