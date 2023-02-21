@@ -53,7 +53,7 @@ export default function Maps(props) {
 
         try {
             if (props.currentUser) {
-                const res = await axios.post("https://map-my-review-backend.onrender.com/api/pins/create-pin", newPin)
+                const res = await axios.post("/pins/create-pin", newPin)
                 setPins([...pins, res.data])
                 setPlaceInfo(null)
                 setTitle(null)
@@ -75,9 +75,10 @@ export default function Maps(props) {
 
     useEffect(() => {
         const getPins = async () => {
-            const response = await axios.get("/pins/get-all-pins");
-            setPins(response.data)
-            console.log(response.data)
+            await axios.get("/pins/get-all-pins").
+                then((res) => setPins(res.data));
+            // setPins(response.data)
+            // console.log(response.data)
         }
         getPins()
     }, [])
