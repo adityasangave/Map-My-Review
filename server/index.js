@@ -13,7 +13,7 @@ connectDB()
 // server.use('/', (req, res) => {
 //     res.send("hellow o")
 // })
-app.use(cors());
+server.use(cors());
 
 server.use('/api/user', require("./routes/user"))
 server.use('/api/pins', require("./routes/pin"))
