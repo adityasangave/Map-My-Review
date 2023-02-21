@@ -1,4 +1,4 @@
-import { Map, NavigationControl, Marker, Popup } from 'react-map-gl';
+import { Map, NavigationControl, Marker, Popup, FullscreenControl, GeolocateControl } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
@@ -7,6 +7,8 @@ import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import './Styles/maps.css'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
+// import mapboxgl from '!mapbox-gl';
+
 
 
 export default function Maps(props) {
@@ -93,7 +95,6 @@ export default function Maps(props) {
                 initialViewState={{
                     longitude: -122.4,
                     latitude: 37.8,
-                    zoom: 14
                 }}
                 style={{ width: '100vw', height: '100vh' }}
                 mapStyle='mapbox://styles/adityazmb/cle8mbz3s001301qs3x3sn24b'
@@ -183,6 +184,9 @@ export default function Maps(props) {
                         </Popup>
                     )
                 }
+                <FullscreenControl />
+
+                <GeolocateControl />
             </Map>
         </div >
     )
