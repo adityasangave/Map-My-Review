@@ -75,7 +75,7 @@ export default function Maps(props) {
 
     useEffect(() => {
         const getPins = async () => {
-            await axios.get("/pins/get-all-pins").
+            return await axios.get("/pins/get-all-pins").
                 then((res) => setPins(res.data));
             // setPins(response.data)
             // console.log(response.data)
