@@ -1,5 +1,7 @@
 const express = require("express")
 const connectDB = require("./db")
+var cors = require('cors');
+
 
 const server = express()
 server.use(express.json())
@@ -11,6 +13,8 @@ connectDB()
 // server.use('/', (req, res) => {
 //     res.send("hellow o")
 // })
+app.use(cors());
+
 server.use('/api/user', require("./routes/user"))
 server.use('/api/pins', require("./routes/pin"))
 
