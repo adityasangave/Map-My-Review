@@ -90,7 +90,11 @@ export default function Maps(props) {
             <Map
                 conatainer={'map'}
                 projection={'globe'}
-                initialViewState={{}}
+                initialViewState={{
+                    longitude: -122.4,
+                    latitude: 37.8,
+                    zoom: 14
+                }}
                 style={{ width: '100vw', height: '100vh' }}
                 mapStyle='mapbox://styles/adityazmb/cle8mbz3s001301qs3x3sn24b'
                 mapboxAccessToken='pk.eyJ1IjoiYWRpdHlhem1iIiwiYSI6ImNsZHVpdXUxczA2YmUzdnBhOWlkNWN0MWoifQ.Zgt3O3d_yGANXBD0VlOuVg'
